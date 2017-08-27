@@ -1,0 +1,31 @@
+{
+  "name": "stream-produce-promise",
+  "version": "1.0.0",
+  "description": "Write to streams with a promise-returning function",
+  "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "keywords": [
+    "stream",
+    "promise",
+    "produce",
+    "write"
+  ],
+  "devDependencies": {
+    "tap": "^10.7.2"
+  },
+  "dependencies": {
+    "channel-surfer": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qard/stream-produce-promise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Qard/stream-produce-promise/issues"
+  },
+  "homepage": "https://github.com/Qard/stream-produce-promise#readme"
+}
