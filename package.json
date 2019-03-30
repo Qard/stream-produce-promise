@@ -1,6 +1,6 @@
 {
   "name": "stream-produce-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write to streams with a promise-returning function",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
   "main": "index.js",
