@@ -1,5 +1,7 @@
 # stream-produce-promise
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Qard/stream-produce-promise.svg)](https://greenkeeper.io/)
+
 Write to streams with a promise-based write function.
 
 ## Install
