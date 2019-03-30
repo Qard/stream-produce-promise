@@ -2,7 +2,7 @@ const Channel = require('channel-surfer')
 
 module.exports = produce
 
-function produce(stream) {
+function produce (stream) {
   const responses = new Channel()
 
   stream.on('error', (err) => {
@@ -10,7 +10,7 @@ function produce(stream) {
   })
 
   return (chunk, encoding) => {
-    function done() {
+    function done () {
       responses.give()
     }
 

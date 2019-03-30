@@ -13,7 +13,7 @@ npm install stream-produce-promise
 ```js
 const consume = require('stream-produce-promise')
 
-async function main(stream) {
+async function main (stream) {
   const write = produce(stream)
   await write('abc123')
   await write('def456')
@@ -25,7 +25,7 @@ main(stream)
 
 ---
 
-### Copyright (c) 2017 Stephen Belanger
+### Copyright (c) 2019 Stephen Belanger
 
 #### Licensed under MIT License
 

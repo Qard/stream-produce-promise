@@ -2,8 +2,8 @@ const tap = require('tap')
 const { PassThrough } = require('stream')
 const produce = require('./')
 
-function uid() {
-  return new Buffer(Math.random().toString(35).substr(2, 16))
+function uid () {
+  return Buffer.from(Math.random().toString(35).substr(2, 16))
 }
 
 tap.test('basics', (t) => {
@@ -19,7 +19,7 @@ tap.test('basics', (t) => {
     t.end()
   })
 
-  write(message).catch(t.error)
+  return write(message)
 })
 
 tap.test('parallel', (t) => {
@@ -51,7 +51,7 @@ tap.test('parallel', (t) => {
   }
   tasks.push(write())
 
-  Promise.all(tasks).catch(t.error)
+  return Promise.all(tasks)
 })
 
 tap.test('errors', (t) => {
@@ -60,12 +60,9 @@ tap.test('errors', (t) => {
   const write = produce(stream)
   stream.emit('error', error)
 
-  write('hi')
-    .then(() => {
-      t.fail('should have received an error')
-    })
-    .catch(err => {
-      t.match(err, error, 'received expected error')
-    })
-    .then(t.end)
+  return write('hi')
+    .then(
+      () => t.fail('should have received an error'),
+      (err) => t.match(err, error, 'received expected error')
+    )
 })
